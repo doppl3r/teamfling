@@ -67,7 +67,15 @@ module.exports = function(app, passport) {
 
     // POST event, will update users event field
     app.post('/event', isLoggedIn, function(req, res) {
-        
+        User.update({ _id : { $eq : req.user._id } }, {'local.event' : req.param('event')}).exec( function (err, result) {
+            if (err) {
+                console.log(err);
+                res.redirect('/');
+            } else {
+                console.log('Update successful');
+                res.redirect('/profile');
+            }
+        });
     });
 };
 
