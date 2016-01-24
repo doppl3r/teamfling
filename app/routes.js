@@ -48,7 +48,7 @@ module.exports = function(app, passport) {
     // GET explore, will search through db for people, one at a time
     app.get('/explore', function(req, res) {
         res.render('/explore');
-    }
+    });
 
 };
 
