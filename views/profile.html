@@ -1,0 +1,20 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<h1> Hi {{user.local.firstname}} </h1>
+
+<p>
+{{user._id}}
+</p>
+
+<p>
+{{user.local.username}}
+</p>
+
+<p>
+{{user.local.password}}
+</p>
+
+<a href="/logout">Register</a>
+
+{% endblock %}

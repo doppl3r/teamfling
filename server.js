@@ -1,37 +1,40 @@
 var express = require('express'),
-    passport = require('passport'),
-    passportLocal = require('passport-local'),
     bodyParser = require('body-parser'),
+    passport = require('passport'),
+    flash = require('connect-flash'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
     engines = require('consolidate'),
-    mongodb = require('mongodb'),
-    monk = require('monk'),
-    db = monk('localhost:27017/grouper');
+    mongoose = require('mongoose'),
+    morgan = require('morgan');
 
+var configDB = require('./config/database.js');
 
-var routes = require('./routes/index.js');
-var users = require('./routes/users.js');
-var userlist = require('./routes/userlist.js');
+mongoose.connect(configDB.url);
 
 var app = express();
+
+// pass passport for configuration
+require('./config/passport')(passport);
+
+app.use(morgan('dev'));
+app.use(cookieParser());
+app.use(bodyParser());
 
 // view engine setup
 app.engine('html', engines.nunjucks);
 app.set('view engine', 'html');
 app.set('views', './views');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(cookieParser());
 app.use(express.static('./public'));
 
-// Make our db accessible to our router
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
+// required for passport
+app.use(session({ secret: 'mysecret' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/userlist', userlist);
+//load routes and pass in our app, and passport
+require('./app/routes.js')(app, passport);
 
 module.exports = app;

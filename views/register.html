@@ -1,0 +1,24 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<h1> Add user </h1>
+
+<div id="addUserDiv">
+    <form action="/register" method="post" >
+        <input id="inputUserName" name="username" type="text" placeholder="User Name"><br>
+        <input id="inputPassword" name="password" type="text" placeholder="Password"><br>
+        <input id="inputFirstName" name="firstname" type="text" placeholder="First Name"><br>
+        <input id="inputLastName" name="lastname" type="text" placeholder="Last Name"><br>
+        <input id="inputRole" name="role" type="checkbox" value="Idea">Idea<br>
+        <input id="inputDescription" name="description" type="text" placeholder="A little blurb"><br>
+        <button id="btnAddUser">Submit</button>
+    </form>
+</div>
+
+{% if message.length %}
+<p> {{ message }} </p>
+{% endif %}
+
+<a href="/login">Log in</a>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // Add User button click
-    $('#btnAddUser').on('click', addUser);
+    //$('#btnAddUser').on('click', addUser);
+    console.log('ready jquery');
 });
 
 // Add User
@@ -9,19 +10,24 @@ function addUser(event) {
 
     // Super basic validation - increase errorCount variable if any fields are blank
     var errorCount = 0;
-    $('#addUser input').each(function(index, val) {
-        if($(this).val() === '') { errorCount++; }
+    $('#addUserDiv input').each(function(index, val) {
+        if($(this).val() === '') { 
+            errorCount++;
+            console.log('error count -- ' + errorCount); 
+        }
     });
 
     // Check and make sure errorCount's still at zero
     if(errorCount === 0) {
-
+        //var roles = $('#addUserDiv input#inputRoles').
         // If it is, compile all user info into one object
         var newUser = {
-            'firstname': $('#addUser input#inputFirstName').val(),
-            'lastname': $('#addUser input#inputLastName').val(),
-            'role': $('#addUser input#inputRole').val(),
-            'description': $('#addUser input#inputDescription').val()
+            'username': $('#addUserDiv input#inputUserName').val(),
+            'password': $('#addUserDiv input#inputPassword').val(),
+            'firstname': $('#addUserDiv input#inputFirstName').val(),
+            'lastname': $('#addUserDiv input#inputLastName').val(),
+            'role': $('#addUserDiv input#inputRole').val(),
+            'description': $('#addUserDiv input#inputDescription').val()
         }
 
         console.log('new user -- ' + newUser.firstname);
@@ -30,7 +36,7 @@ function addUser(event) {
         $.ajax({
             type: 'POST',
             data: newUser,
-            url: '/users/adduser',
+            url: '/register',
             dataType: 'JSON'
         }).done(function( response ) {
 
@@ -38,10 +44,8 @@ function addUser(event) {
             if (response.msg === '') {
 
                 // Clear the form inputs
-                $('#addUser input').val('');
-
-                // Update the table
-                //populateTable();
+                $('#addUserDiv input').val('');
+                $('#inputRole').prop('checked', false);
 
             }
             else {
