@@ -25,19 +25,21 @@ module.exports = function(app, passport) {
         res.render('register.html', { message: req.flash('signupMessage')} );
     });
 
-    // process the signup form
+    // POST to register, process the signup form
     app.post('/register', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
         failureRedirect : '/register', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
+    
+    // GET profile page, only if logged in
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile.html', {
             user : req.user
         }); 
     });
 
+    // GET logout, will log user out
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
@@ -62,8 +64,8 @@ function isNotLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on 
     if (req.isAuthenticated()) {
         res.redirect('/');
-        return 0;
     }
-    return next();
+    else
+        return next();
     // if they are logged in, redirect them to the home page
 }
