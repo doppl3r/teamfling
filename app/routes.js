@@ -43,8 +43,14 @@ module.exports = function(app, passport) {
 
     // POST profile page, only if logged in
     app.post('/profile', isLoggedIn, function(req, res) {
-        User.update({ _id : { $eq : req.user._id }}).exec( function (err, result) {
-            
+        User.update({ _id : { $eq : req.user._id }}, {'local.username' : req.param('username'), 'local.description' : req.param('description')}).exec( function (err, result) {
+            if (err) {
+                console.log(err);
+                res.redirect('/');
+            } else {
+                console.log('Profile update');
+                res.redirect('/explore');
+            }
         });
     });
 

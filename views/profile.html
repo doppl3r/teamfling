@@ -1,7 +1,7 @@
 {% extends "views/layout.html" %}
 
 {% block content %}
-<h1> Hi {{user.local._id}} </h1>
+<h1> Hi {{user._id}} </h1>
 
 <div id="profileDiv">
     <form action="/profile" method="post" >
@@ -10,10 +10,14 @@
         <button id="btnProfile">Update</button>
     </form>
 </div>
-
 <p>
 {{user.local.email}}
 </p>
+
+<p>
+{{user.local.username}}
+</p>
+
 
 <p>
 {{user.local.password}}
