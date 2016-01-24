@@ -11,7 +11,8 @@ var userSchema = mongoose.Schema({
         firstname    : String,
         lastname     : String,
         role         : String,
-        description  : String
+        description  : String,
+        event        : String
     }
 /*
     facebook         : {

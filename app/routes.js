@@ -1,3 +1,5 @@
+var User = require('./models/user');
+
 module.exports = function(app, passport) {
 
     /* GET index */
@@ -46,10 +48,27 @@ module.exports = function(app, passport) {
     });
 
     // GET explore, will search through db for people, one at a time
-    app.get('/explore', function(req, res) {
-        res.render('/explore');
+    app.get('/explore', isLoggedIn, function(req, res) {
+        //random select one from Users
+        User.count().exec(function(err, count){
+          var random = Math.ceil(Math.random() * count) % count;
+          User.findOne({ _id : { $ne : req.user._id } })
+              .skip(random).exec( function (err, result) {
+                // result is random
+                res.render('explore.html', { user: result } );
+              });
+        });
     });
 
+    // GET event, will update users event field
+    app.get('/event', isLoggedIn, function(req, res) {
+        res.render('event.html');
+    });
+
+    // POST event, will update users event field
+    app.post('/event', isLoggedIn, function(req, res) {
+        
+    });
 };
 
 // route middleware to make sure a user is logged in
