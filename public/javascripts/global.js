@@ -1,7 +1,11 @@
 $(document).ready(function() {
-    // Add User button click
-    //$('#btnAddUser').on('click', addUser);
-    console.log('ready jquery');
+
+});
+
+$(window).load(function() {
+    fullscreen('body');
+    //Listen to Window Resize
+    var $resize = $(window).resize(function () { fullscreen(null); });
 });
 
 // Add User
@@ -62,3 +66,13 @@ function addUser(event) {
         return false;
     }
 };
+
+function fullscreen(name) {
+    $(name).addClass('fullscreen');
+    $('.fullscreen').css({
+        width: $(window).width(),
+        height: $(window).height()
+    });
+}
+
+
