@@ -36,7 +36,11 @@ section form button.input {
     background-color: #fff; 
     color: #f16724; 
     border-color: #fff; 
-    
+}
+section form button.input:hover {
+    background-color: #faa741;
+    border-color: #faa741;
+    color: #fff;
 }
 
 .box-shadow-1 { -webkit-filter: drop-shadow( 0px 7px 5px #f16524 ); filter: drop-shadow( 0px 7px 5px #f16524 ); }

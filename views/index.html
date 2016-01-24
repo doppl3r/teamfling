@@ -1,8 +1,19 @@
 {% extends "views/layout.html" %}
 
 {% block content %}
-<h1> Grouper {{user.local.username}} </h1>
+<section>
+    <div class="wrapper">
+        <img class="logo box-shadow-1" src="img/logo.svg"/>
+    </div>
+</section>
 
-
+<script>
+    $('.logo').delay(1000).fadeOut(
+        function(){ 
+            {% if (user)  %} {  }
+             {% else %} { window.location.replace('/register'); }
+              {% endif %}
+        });
+</script>
 
 {% endblock %}
