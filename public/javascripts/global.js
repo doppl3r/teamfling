@@ -1,8 +1,4 @@
 $(document).ready(function() {
-
-});
-
-$(window).load(function() {
     fullscreen('body');
     //Listen to Window Resize
     var $resize = $(window).resize(function () { fullscreen(null); });
@@ -71,7 +67,7 @@ function fullscreen(name) {
     $(name).addClass('fullscreen');
     $('.fullscreen').css({
         width: $(window).width(),
-        height: $(window).height()
+        height: $(document).height()
     });
 }
 

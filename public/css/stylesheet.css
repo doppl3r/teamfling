@@ -1,18 +1,82 @@
-section .wrapper {
-    background-color:     
-}
-.wrapper {
-	margin: 0 auto;
-	max-width: 480px;
-}
-
-body {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcb549+0,f26423+100 */
+html {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcb549+0,f26423+100 */
 	background: rgb(252,181,73); /* Old browsers */
 	background: -moz-linear-gradient(-45deg,  rgba(252,181,73,1) 0%, rgba(242,100,35,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(-45deg,  rgba(252,181,73,1) 0%,rgba(242,100,35,1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(135deg,  rgba(252,181,73,1) 0%,rgba(242,100,35,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb549', endColorstr='#f26423',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	background-repeat:no-repeat;
+    font-family: 'farray';
+}
+body {
+	
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 480px;
+    box-sizing: border-box;
+}
+section .wrapper {
+    padding: 32px;
+    /*test*/ /*background-color: rgba(255,255,255,0.1);*/
+}
+section form { }
+section form .input { 
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 36px;
+    border: 6px solid #faa741;
+    padding: 5% 0;
+    text-align: center;
+}
+section form button.input { 
+    background-color: #fff; 
+    color: #f16724; 
+    border-color: #fff; 
+    
+}
+
+.box-shadow-1 { -webkit-filter: drop-shadow( 0px 7px 5px #f16524 ); filter: drop-shadow( 0px 7px 5px #f16524 ); }
+.box-shadow-2 { -webkit-filter: drop-shadow( 0px 7px 5px #d74e28 ); filter: drop-shadow( 0px 7px 5px #d74d27 ); }
+
+section form ::-webkit-input-placeholder { color: #fff; }
+section form :-moz-placeholder { color: #fff; opacity:  1; }
+section form ::-moz-placeholder { color: #fff; opacity: 1; }
+section form :-ms-input-placeholder { color: #fff; }
+section form :placeholder-shown { color: #fff; }
+
+section form input:focus::-webkit-input-placeholder { color: rgba(255,255,255,0.25); }
+section form input:focus:-moz-placeholder { color: rgba(255,255,255,0.25); opacity:  1; }
+section form input:focus::-moz-placeholder { color: rgba(255,255,255,0.25); opacity: 1; }
+section form input:focus:-ms-input-placeholder { color: rgba(255,255,255,0.25); }
+section form input:focus:placeholder-shown { color: rgba(255,255,255,0.25); }
+
+input:focus, select:focus, textarea:focus, button:focus { outline: none; }
+
+.logo { margin: 12%; }
+
+.effect-swing { -webkit-transition: all 0.25s ease; -moz-transition: all 0.25s ease; -o-transition: all 0.25s ease; transition: all 0.25s ease; }
+.effect-swing-slow { -webkit-transition: all 0.5s ease-out; -moz-transition: all 0.5s ease-out; -o-transition: all 0.5s ease-out; transition: all 0.5s ease-out; }
+.rotate {  -webkit-transition: -webkit-transform .25s ease-in-out; transition: transform .25s ease-in-out; }
+.rotate:hover { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+img.zoom-in {-webkit-transition: all 500ms ease; -moz-transition: all 500ms ease; -ms-transition: all 500ms ease; -o-transition: all 500ms ease; transition: all 500ms ease;}
+img.zoom-in:hover { -webkit-transform:scale(1.05); -moz-transform:scale(1.1); -ms-transform:scale(1.1); -o-transform:scale(1.1); transform:scale(1.1); }
+img.zoom-out {-webkit-transition: all 500ms ease; -moz-transition: all 500ms ease; -ms-transition: all 500ms ease; -o-transition: all 500ms ease; transition: all 500ms ease;}
+img.zoom-out:hover { -webkit-transform:scale(0.9); -moz-transform:scale(0.9); -ms-transform:scale(0.9); -o-transform:scale(0.9); transform:scale(0.9); }
+.noselect { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+
+@font-face {
+    font-family: 'farray';
+    src: url('../fonts/farray-webfont.eot');
+    src: url('../fonts/farray-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/farray-webfont.woff2') format('woff2'),
+         url('../fonts/farray-webfont.woff') format('woff'),
+         url('../fonts/farray-webfont.ttf') format('truetype'),
+         url('../fonts/farray-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
