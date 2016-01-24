@@ -45,6 +45,11 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    // GET explore, will search through db for people, one at a time
+    app.get('/explore', function(req, res) {
+        res.render('/explore');
+    }
+
 };
 
 // route middleware to make sure a user is logged in
