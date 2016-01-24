@@ -1,11 +1,15 @@
 {% extends "views/layout.html" %}
 
 {% block content %}
-<h1> Hi {{user.local.firstname}} </h1>
+<h1> Hi {{user.local._id}} </h1>
 
-<p>
-{{user._id}}
-</p>
+<div id="profileDiv">
+    <form action="/profile" method="post" >
+        <input id="profileUsername" name="username" type="text" placeholder="Username"><br>
+        <input id="profileDescription" name="description" type="text">{{user.local.description}}<br>
+        <button id="btnProfile">Update</button>
+    </form>
+</div>
 
 <p>
 {{user.local.email}}

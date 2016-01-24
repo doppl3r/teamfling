@@ -41,6 +41,13 @@ module.exports = function(app, passport) {
         }); 
     });
 
+    // POST profile page, only if logged in
+    app.post('/profile', isLoggedIn, function(req, res) {
+        User.update({ _id : { $eq : req.user._id }}).exec( function (err, result) {
+            
+        });
+    });
+
     // GET logout, will log user out
     app.get('/logout', function(req, res) {
         req.logout();
