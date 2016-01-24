@@ -3,8 +3,16 @@
 {% block content %}
 <h1> EXPLORE PEOPLE </h1>
 
-<p>{{user.local.firstname}}</p>
-<p>{{user.local.lastname}}</p>
-<p>{{user.local.description}}</p>
+<p>{{user.local.username}}</p>
+<p id="exploreInfoParagraph">{{user.local.description}}</p>
 
+<form action="/explore" method="get">
+    <button id="exploreNo">No interest</button>
+</form>
+
+<button id="exploreInfo">More info</button>
+
+<form action="/explore" method="post">
+    <button id="exploreYes">Have interest</button>
+</form>
 {% endblock %}

@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
     app.get('/explore', isLoggedIn, function(req, res) {
         //random select one from Users
         User.count().exec(function(err, count){
-          var random = Math.ceil(Math.random() * count) % count;
+          var random = Math.ceil(Math.random() * count) % count + 1;
           User.findOne({ _id : { $ne : req.user._id } })
               .skip(random).exec( function (err, result) {
                 // result is random
