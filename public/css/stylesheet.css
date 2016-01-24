@@ -1,0 +1,18 @@
+section .wrapper {
+    background-color:     
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 480px;
+}
+
+body {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcb549+0,f26423+100 */
+	background: rgb(252,181,73); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(252,181,73,1) 0%, rgba(242,100,35,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(252,181,73,1) 0%,rgba(242,100,35,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(252,181,73,1) 0%,rgba(242,100,35,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb549', endColorstr='#f26423',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-repeat:no-repeat;
+
+}
