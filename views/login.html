@@ -11,6 +11,10 @@
     </form>
 </div>
 
+{% if message.length %}
+<p> {{ message }} </p>
+{% endif %}
+
 <a href="/register">Register</a>
 
 {% endblock %}

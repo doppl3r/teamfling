@@ -13,20 +13,20 @@ module.exports = function(app, passport) {
     });
     
     /* POST to /login */
-    app.post('/login', passport.authenticate('login', {
+    app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/profile',
         failureRedirect: '/login',
         failureFlash : true
     }));
 
     /* GET register */
-    app.get('/register', function(req, res) {
+    app.get('/register', isNotLoggedIn, function(req, res) {
         console.log('register.html');
         res.render('register.html', { message: req.flash('signupMessage')} );
     });
 
     // process the signup form
-    app.post('/register', passport.authenticate('signup', {
+    app.post('/register', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
         failureRedirect : '/register', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
@@ -54,4 +54,16 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/');
+}
+
+// route middleware to make sure a logged in user can't access
+function isNotLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated()) {
+        res.redirect('/');
+        return 0;
+    }
+    return next();
+    // if they are logged in, redirect them to the home page
 }
