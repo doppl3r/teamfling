@@ -53,7 +53,7 @@ body section form {
     height: 56px;
     margin: 0 8%;
     cursor: pointer; }
-  /* line 53, E:/teamfling/public/css/stylesheet.scss */
+  /* line 52, E:/teamfling/public/css/stylesheet.scss */
   body section form .role[type='checkbox'] + label {
     position: relative;
     border-bottom: 6px solid transparent;
@@ -89,7 +89,7 @@ body section form {
     background: url("../img/icon5.svg") no-repeat; }
 
 /* line 73, E:/teamfling/public/css/stylesheet.scss */
-body .box-shadow-1, body section form .role[type='checkbox'] {
+body .box-shadow-1, body section form .role[type='checkbox'] + label {
   -webkit-filter: drop-shadow(0px 7px 5px #f16524);
   filter: drop-shadow(0px 7px 5px #f16524); }
 
