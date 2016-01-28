@@ -3,8 +3,8 @@ $(document).ready(function() {
     //Listen to Window Resize
     var $resize = $(window).resize(function () { fullscreen(null); });
 
-    $('#exploreInfo').click(function() {
-        $('#exploreInfoParagraph').toggle():
+    $("#exploreInfo").click(function() {
+      $("#exploreInfoParagraph").toggle();
     });
 });
 
