@@ -4,8 +4,10 @@ $(document).ready(function() {
     var $resize = $(window).resize(function () { fullscreen(null); });
 
     $('#exploreInfo').click(function() {
-        $('#exploreInfoParagraph').toggle():
+        $('#exploreInfoParagraph').toggle();
     });
+
+    //TODO: NEED VALIDATION ON PROFILE, when update button is pushed USERNAME field cannot have a value of ''
 });
 
 function fullscreen(name) {
