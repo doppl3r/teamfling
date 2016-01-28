@@ -35,7 +35,7 @@ module.exports = function(app, passport) {
     }));
     
     // GET profile page, only if logged in
-    app.get('/profile', isLoggedIn, function(req, res) {
+    app.get('/profile', isLoggedIn, function(req, res) {        
         res.render('profile.html', {
             user : req.user
         }); 
@@ -43,7 +43,28 @@ module.exports = function(app, passport) {
 
     // POST profile page, only if logged in
     app.post('/profile', isLoggedIn, function(req, res) {
-        User.update({ _id : { $eq : req.user._id }}, {'local.username' : req.param('username'), 'local.description' : req.param('description')}).exec( function (err, result) {
+        console.log('params');        
+        console.log(req.params);
+        console.log('body');        
+        console.log(req.body);
+        console.log('query');
+        console.log(req.query);
+        console.log('user');
+        console.log(req.user);
+      
+        //If they dont update on first time, Username will = ''
+        var username = req.body.username;
+        var description = req.body.description;
+    
+        //TODO: add some sort of validation
+        User.update(
+            { _id : { $eq : req.user._id } }, 
+            { 'local.username' : username,
+             'local.description' : description,
+             //Will add the NULL value to role if they don't select a role
+             '$addToSet' : { 'local.role' : { '$each' : 
+                [ req.body.role 
+                ] } } } ).exec( function (err, result) {
             if (err) {
                 console.log(err);
                 res.redirect('/');
@@ -52,6 +73,7 @@ module.exports = function(app, passport) {
                 res.redirect('/explore');
             }
         });
+    
     });
 
     // GET logout, will log user out
@@ -64,7 +86,7 @@ module.exports = function(app, passport) {
     app.get('/explore', isLoggedIn, function(req, res) {
         //random select one from Users
         User.count().exec(function(err, count){
-          var random = Math.ceil(Math.random() * count) % count + 1;
+          var random = Math.floor(Math.random() * count) % count + 1;
           User.findOne({ _id : { $ne : req.user._id } })
               .skip(random).exec( function (err, result) {
                 // result is random

@@ -1,6 +1,9 @@
 {% extends "views/layout.html" %}
 
 {% block content %}
+<script>
+    //TODO: jquery set checkboxes to 'check'ed if they have it under their req.user.get('local.role')
+</script>
 <section>
     <div class="wrapper">
         <div id="profileDiv">
@@ -11,6 +14,12 @@
                 <input id="icon3" class="role" type="checkbox" name="leader" value="leader"><label></label>
                 <input id="icon4" class="role" type="checkbox" name="pr" value="pr"><label></label>
                 <input id="icon5" class="role" type="checkbox" name="idea" value="idea"><label></label>
+                <input id="profileUsername" class="input" name="username" type="text" placeholder="Username" value={{user.local.username}}><br>
+                <input id="engineer" class="role" type="checkbox" name="role" value="engineer"><br>
+                <input id="designer" class="role" type="checkbox" name="role" value="designer"><br>
+                <input id="leader" class="role" type="checkbox" name="role" value="leader"><br>
+                <input id="pr" class="role" type="checkbox" name="role" value="pr"><br>
+                <input id="idea" class="role" type="checkbox" name="role" value="idea"><br>
                 <textarea id="profileDescription" class="input" name="description">{{user.local.description}}</textarea><br>
                 <button id="btnProfile" class="input box-shadow-2 effect-swing">Update</button>
             </form>
