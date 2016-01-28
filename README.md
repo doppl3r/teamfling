@@ -16,7 +16,7 @@ TeamFling allows hackers to quickly form teams based on common interests or need
 
 #### Getting a Server Started
 - Open cmd and set the directory to MongoDB install path. ex: `cd C:\Program Files\MongoDB\Server\3.2\bin`
-- In the `bin` directory, enter on cmd line `mongod --dbpath=C:\mongo-data\db` <use your database directory after the '='>
+- In the `bin` directory, enter on cmd line `mongod --dbpath=C:\mongo-data\db` (use your database directory after the `=` symbol)
 - Keep your current cmd open and launch a new cmd
 - Set your directory to the project directory. ex: `E:\Personal\Programming\HackArizona\teamfling`
 - Enter `npm start` - (press `ctrl + c` to end)
