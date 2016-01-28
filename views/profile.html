@@ -6,11 +6,11 @@
         <div id="profileDiv">
             <form action="/profile" method="post" >
                 <input id="profileUsername" class="input" name="username" type="text" placeholder="Username"><br>
-                <input id="engineer" class="role" type="checkbox" name="engineer" value="engineer" checked><br>
-                <input id="designer" class="role" type="checkbox" name="designer" value="designer"><br>
-                <input id="leader" class="role" type="checkbox" name="leader" value="leader"><br>
-                <input id="pr" class="pr" type="checkbox" name="pr" value="pr"><br>
-                <input id="idea" class="pr" type="checkbox" name="idea" value="idea"><br>
+                <input id="icon1" class="role" type="checkbox" name="engineer" value="engineer" checked><label></label>
+                <input id="icon2" class="role" type="checkbox" name="designer" value="designer"><label></label>
+                <input id="icon3" class="role" type="checkbox" name="leader" value="leader"><label></label>
+                <input id="icon4" class="role" type="checkbox" name="pr" value="pr"><label></label>
+                <input id="icon5" class="role" type="checkbox" name="idea" value="idea"><label></label>
                 <textarea id="profileDescription" class="input" name="description">{{user.local.description}}</textarea><br>
                 <button id="btnProfile" class="input box-shadow-2 effect-swing">Update</button>
             </form>
