@@ -3,13 +3,8 @@ $(document).ready(function() {
     //Listen to Window Resize
     var $resize = $(window).resize(function () { fullscreen(null); });
 
-<<<<<<< HEAD
     $("#exploreInfo").click(function() {
       $("#exploreInfoParagraph").toggle();
-=======
-    $('#exploreInfo').click(function() {
-        $('#exploreInfoParagraph').toggle();
->>>>>>> d0ff34091fc54931f921db832f172bf955624847
     });
 
     //TODO: NEED VALIDATION ON PROFILE, when update button is pushed USERNAME field cannot have a value of ''
