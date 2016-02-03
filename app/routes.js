@@ -55,14 +55,19 @@ module.exports = function(app, passport) {
         //If they dont update on first time, description will = ''
         var username = req.body.username;
         var description = req.body.description;
-    
+        var roles = req.body.role;
+        
+        //If roles is only 1 string, make it an array
+        if ( !Array.isArray(roles) )
+            roles = roles.split();
+
         //Update user profile
         User.update(
             { _id : { $eq : req.user._id } }, 
             { 'local.username' : username,
              'local.description' : description,
              //Will add the NULL value to role if they don't select a role
-             '$addToSet' : { 'local.role' : { '$each' : req.body.role } } } ).exec( function (err, result) {
+             '$addToSet' : { 'local.role' : { '$each' : roles } } } ).exec( function (err, result) {
             if (err) {
                 console.log(err);
                 res.redirect('/');
@@ -82,13 +87,19 @@ module.exports = function(app, passport) {
 
     // GET explore, will search through db for people, one at a time
     app.get('/explore', isLoggedIn, function(req, res) {
-        //random select one from Users
-        User.count().exec(function(err, count){
-          var random = (Math.floor ( ( Math.random() * count ) / 2 ) + 1 ) % count;
-          User.findOne({ _id : { $ne : req.user._id } })
-              .skip(random).exec( function (err, result) {
+        console.log('DEBUG - ' + req.user);
+        
+        var event = req.user.local.event;
+        console.log('event were looking for -- ' + event);
+//random select one from Users
+        User.find({'local.event' : event}).count().exec(function(err, count){
+          console.log('Number of people -- ' + count);
+          //var random = (Math.floor ( ( Math.random() * count ) / 2 ) + 1 ) % count;
+          User.findOne({ _id : { $ne : req.user._id }, 'local.event' : event })
+              //.skip(random)
+              .exec( function (err, result) {
                 // result is random
-                res.render('explore.html', { user: result } );
+                res.render('explore.html', { user: result, myself: req.user } );
               });
         });
     });
