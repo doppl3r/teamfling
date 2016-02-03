@@ -52,25 +52,23 @@ module.exports = function(app, passport) {
         console.log('user');
         console.log(req.user);
       
-        //If they dont update on first time, Username will = ''
+        //If they dont update on first time, description will = ''
         var username = req.body.username;
         var description = req.body.description;
     
-        //TODO: add some sort of validation
+        //Update user profile
         User.update(
             { _id : { $eq : req.user._id } }, 
             { 'local.username' : username,
              'local.description' : description,
              //Will add the NULL value to role if they don't select a role
-             '$addToSet' : { 'local.role' : { '$each' : 
-                [ req.body.role 
-                ] } } } ).exec( function (err, result) {
+             '$addToSet' : { 'local.role' : { '$each' : req.body.role } } } ).exec( function (err, result) {
             if (err) {
                 console.log(err);
                 res.redirect('/');
             } else {
                 console.log('Profile update');
-                res.redirect('/explore');
+                res.redirect('/event');
             }
         });
     
@@ -86,7 +84,7 @@ module.exports = function(app, passport) {
     app.get('/explore', isLoggedIn, function(req, res) {
         //random select one from Users
         User.count().exec(function(err, count){
-          var random = Math.floor(Math.random() * count) % count + 1;
+          var random = (Math.floor ( ( Math.random() * count ) / 2 ) + 1 ) % count;
           User.findOne({ _id : { $ne : req.user._id } })
               .skip(random).exec( function (err, result) {
                 // result is random
@@ -102,13 +100,13 @@ module.exports = function(app, passport) {
 
     // POST event, will update users event field
     app.post('/event', isLoggedIn, function(req, res) {
-        User.update({ _id : { $eq : req.user._id } }, {'local.event' : req.param('event')}).exec( function (err, result) {
+        User.update({ _id : { $eq : req.user._id } }, {'local.event' : req.body.eventname}).exec( function (err, result) {
             if (err) {
                 console.log(err);
                 res.redirect('/');
             } else {
                 console.log('Update successful');
-                res.redirect('/profile');
+                res.redirect('/explore');
             }
         });
     });
