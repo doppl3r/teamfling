@@ -1,4 +1,4 @@
-/* line 1, E:/teamfling/public/css/stylesheet.scss */
+/* line 1, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 html {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcb549+0,f26423+100 */
   background: #fcb549;
@@ -14,18 +14,55 @@ html {
   background-repeat: no-repeat;
   font-family: 'farray'; }
 
-/* line 14, E:/teamfling/public/css/stylesheet.scss */
+/* line 14, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body section .wrapper {
   margin: 0 auto;
   max-width: 480px;
   box-sizing: border-box;
   padding: 32px; }
 
-/* line 20, E:/teamfling/public/css/stylesheet.scss */
+/* line 20, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body section form {
   text-align: center;
   /*Role Styling*/ }
-  /* line 22, E:/teamfling/public/css/stylesheet.scss */
+  /* line 22, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form ::-webkit-input-placeholder {
+    color: #fff; }
+  /* line 23, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form :-moz-placeholder {
+    color: #fff;
+    opacity: 1; }
+  /* line 24, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form ::-moz-placeholder {
+    color: #fff;
+    opacity: 1; }
+  /* line 25, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form :-ms-input-placeholder {
+    color: #fff; }
+  /* line 26, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form :placeholder-shown {
+    color: #fff; }
+  /* line 27, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.25); }
+  /* line 28, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.25);
+    opacity: 1; }
+  /* line 29, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.25);
+    opacity: 1; }
+  /* line 30, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.25); }
+  /* line 31, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus:placeholder-shown {
+    color: rgba(255, 255, 255, 0.25); }
+  /* line 32, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
+  body section form input:focus, body section form select:focus, body section form textarea:focus, body section form button:focus {
+    outline: none; }
+  /* line 33, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form .input {
     display: block;
     width: 100%;
@@ -36,24 +73,24 @@ body section form {
     border: 6px solid #faa741;
     padding: 5% 0;
     text-align: center; }
-  /* line 33, E:/teamfling/public/css/stylesheet.scss */
+  /* line 44, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form button.input {
     background-color: #fff;
     color: #f16724;
     border-color: #fff; }
-  /* line 38, E:/teamfling/public/css/stylesheet.scss */
+  /* line 49, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form button.input:hover {
     background-color: #faa741;
     border-color: #faa741;
     color: #fff; }
-  /* line 45, E:/teamfling/public/css/stylesheet.scss */
+  /* line 56, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form .role[type='checkbox'] {
     opacity: 0;
     width: 44px;
     height: 56px;
     margin: 0 8%;
     cursor: pointer; }
-  /* line 52, E:/teamfling/public/css/stylesheet.scss */
+  /* line 63, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form .role[type='checkbox'] + label {
     position: relative;
     border-bottom: 6px solid transparent;
@@ -62,119 +99,71 @@ body section form {
     display: inline-block;
     margin-left: calc( -44px - 8%);
     pointer-events: none; }
-  /* line 62, E:/teamfling/public/css/stylesheet.scss */
+  /* line 73, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form .role[type='checkbox']:checked + label {
     border-color: #fff; }
-  /* line 63, E:/teamfling/public/css/stylesheet.scss */
+  /* line 74, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form .role[type='checkbox']:hover + label {
     border-color: #fff;
     opacity: .5; }
-  /* line 64, E:/teamfling/public/css/stylesheet.scss */
+  /* line 75, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon1[type='checkbox'] {
     margin-left: 0; }
-  /* line 65, E:/teamfling/public/css/stylesheet.scss */
+  /* line 76, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon1[type='checkbox'] + label {
     background: url("../img/icon1.svg") no-repeat; }
-  /* line 66, E:/teamfling/public/css/stylesheet.scss */
+  /* line 77, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon2[type='checkbox'] + label {
     background: url("../img/icon2.svg") no-repeat; }
-  /* line 67, E:/teamfling/public/css/stylesheet.scss */
+  /* line 78, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon3[type='checkbox'] + label {
     background: url("../img/icon3.svg") no-repeat; }
-  /* line 68, E:/teamfling/public/css/stylesheet.scss */
+  /* line 79, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon4[type='checkbox'] + label {
     background: url("../img/icon4.svg") no-repeat; }
-  /* line 69, E:/teamfling/public/css/stylesheet.scss */
+  /* line 80, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
   body section form #icon5[type='checkbox'] + label {
     background: url("../img/icon5.svg") no-repeat; }
 
-/* line 73, E:/teamfling/public/css/stylesheet.scss */
+/* line 84, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .box-shadow-1, body section form .role[type='checkbox'] + label {
   -webkit-filter: drop-shadow(0px 7px 5px #f16524);
   filter: drop-shadow(0px 7px 5px #f16524); }
 
-/* line 74, E:/teamfling/public/css/stylesheet.scss */
+/* line 85, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .box-shadow-2 {
   -webkit-filter: drop-shadow(0px 7px 5px #d74e28);
   filter: drop-shadow(0px 7px 5px #d74d27); }
 
-/* line 78, E:/teamfling/public/css/stylesheet.scss */
-body section form ::-webkit-input-placeholder {
-  color: #fff; }
-
-/* line 79, E:/teamfling/public/css/stylesheet.scss */
-body section form :-moz-placeholder {
-  color: #fff;
-  opacity: 1; }
-
-/* line 80, E:/teamfling/public/css/stylesheet.scss */
-body section form ::-moz-placeholder {
-  color: #fff;
-  opacity: 1; }
-
-/* line 81, E:/teamfling/public/css/stylesheet.scss */
-body section form :-ms-input-placeholder {
-  color: #fff; }
-
-/* line 82, E:/teamfling/public/css/stylesheet.scss */
-body section form :placeholder-shown {
-  color: #fff; }
-
-/* line 83, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.25); }
-
-/* line 84, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.25);
-  opacity: 1; }
-
-/* line 85, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.25);
-  opacity: 1; }
-
-/* line 86, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.25); }
-
-/* line 87, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus:placeholder-shown {
-  color: rgba(255, 255, 255, 0.25); }
-
-/* line 88, E:/teamfling/public/css/stylesheet.scss */
-body section form input:focus, body section form select:focus, body section form textarea:focus, body section form button:focus {
-  outline: none; }
-
-/* line 91, E:/teamfling/public/css/stylesheet.scss */
+/* line 87, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .logo {
   margin: 12%; }
 
-/* line 93, E:/teamfling/public/css/stylesheet.scss */
+/* line 89, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .effect-swing, body section form .role[type='checkbox']:hover + label {
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease; }
 
-/* line 94, E:/teamfling/public/css/stylesheet.scss */
+/* line 90, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .effect-swing-slow {
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
 
-/* line 95, E:/teamfling/public/css/stylesheet.scss */
+/* line 91, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .rotate {
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out; }
 
-/* line 96, E:/teamfling/public/css/stylesheet.scss */
+/* line 92, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .rotate:hover {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg); }
 
-/* line 97, E:/teamfling/public/css/stylesheet.scss */
+/* line 93, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body img.zoom-in {
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
@@ -182,7 +171,7 @@ body img.zoom-in {
   -o-transition: all 500ms ease;
   transition: all 500ms ease; }
 
-/* line 98, E:/teamfling/public/css/stylesheet.scss */
+/* line 94, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body img.zoom-in:hover {
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.1);
@@ -190,7 +179,7 @@ body img.zoom-in:hover {
   -o-transform: scale(1.1);
   transform: scale(1.1); }
 
-/* line 99, E:/teamfling/public/css/stylesheet.scss */
+/* line 95, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body img.zoom-out {
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
@@ -198,7 +187,7 @@ body img.zoom-out {
   -o-transition: all 500ms ease;
   transition: all 500ms ease; }
 
-/* line 100, E:/teamfling/public/css/stylesheet.scss */
+/* line 96, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body img.zoom-out:hover {
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
@@ -206,7 +195,7 @@ body img.zoom-out:hover {
   -o-transform: scale(0.9);
   transform: scale(0.9); }
 
-/* line 101, E:/teamfling/public/css/stylesheet.scss */
+/* line 97, C:/Users/Jacob/Development/Node/teamfling/public/css/stylesheet.scss */
 body .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
