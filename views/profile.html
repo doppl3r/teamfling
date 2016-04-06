@@ -1,15 +1,46 @@
 {% extends "views/layout.html" %}
 
 {% block content %}
+
+<!-- ugly and it doesn't work -->
+{% for role in user.local.role %}
+    <ul> {{ role }} </ul>
+    <script>
+        switch ( '{{role}}' ) {
+           case 'engineer':
+               $('#icon1').prop('checked', true);
+               break;
+            case 'designer':
+                $('#icon2').prop("checked", true);
+                break;
+            case 'leader':
+                $('#icon3').prop('checked', true);
+                break;
+            case 'pr':
+                $('#icon4').prop('checked', true);
+                break;
+            case 'idea':
+                $('#icon5').prop('checked', true);
+        }
+    </script>
+<!-- If role array is empty -->
+{% else %}
+    <p> empty list </p>
+    <script>
+        $('#icon1').prop('checked', true);
+    </script>
+{% endfor %}
+
 <script>
     //TODO: jquery set checkboxes to 'check'ed if they have it under their req.user.get('local.role')
+
 </script>
 <section>
     <div class="wrapper">
         <div id="profileDiv">
             <form action="/profile" method="post" >
                 <input id="profileUsername" class="input" name="username" type="text" placeholder="Username" required value={{user.local.username}}>
-                <label><input id="icon1" class="role" type="checkbox" name="role" value="engineer" checked><span></span></label>
+                <label><input id="icon1" class="role" type="checkbox" name="role" value="engineer"><span></span></label>
                 <label><input id="icon2" class="role" type="checkbox" name="role" value="designer"><span></span></label>
                 <label><input id="icon3" class="role" type="checkbox" name="role" value="leader"><span></span></label>
                 <label><input id="icon4" class="role" type="checkbox" name="role" value="pr"><span></span></label>
