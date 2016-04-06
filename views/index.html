@@ -7,13 +7,15 @@
     </div>
 </section>
 
+{% if user %}
+<h1> Welcome {{user.local.username}} </h1>
+
+{% else %}
 <script>
-    $('.logo').delay(1000).fadeOut(
-        function(){ 
-            {% if (user)  %} {  }
-             {% else %} { window.location.replace('/register'); }
-              {% endif %}
-        });
+  $('.logo').delay(1000).fadeOut( function(){
+    window.location.replace('/register');
+  });
 </script>
+{% endif %}
 
 {% endblock %}
