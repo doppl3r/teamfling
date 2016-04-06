@@ -3,8 +3,14 @@
 {% block content %}
 <h1> EXPLORE PEOPLE in {{myself.local.event}}</h1>
 
+{% if user %}
 <p>{{user.local.username}}</p>
 <p id="exploreInfoParagraph" hidden>{{user.local.description}}</p>
+
+{% else %}
+<p>No more people available!</p>
+
+{% endif %}
 
 <form action="/explore" method="get">
     <button id="exploreNo">No interest</button>
