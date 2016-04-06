@@ -1,0 +1,24 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<h1> EXPLORE PEOPLE in {{myself.local.event}}</h1>
+
+{% if user %}
+<p>{{user.local.username}}</p>
+<p id="exploreInfoParagraph" hidden>{{user.local.description}}</p>
+
+{% else %}
+<p>No more people available!</p>
+
+{% endif %}
+
+<form action="/explore" method="get">
+    <button id="exploreNo">No interest</button>
+</form>
+
+<button id="exploreInfo">More info</button>
+
+<form action="/explore" method="post">
+    <button id="exploreYes">Have interest</button>
+</form>
+{% endblock %}

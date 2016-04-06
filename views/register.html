@@ -1,0 +1,25 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<section>
+	<div class="wrapper">
+        <img class="logo box-shadow-1" src="img/logo.svg"/>
+
+		<div id="addUserDiv">
+		    <form action="/register" method="post" >
+		        <input id="inputEmail" class="input" name="email" type="text" placeholder="Email"><br>
+		        <input id="inputPassword" class="input" name="password" type="text" placeholder="Password"><br>
+		        <!-- <input id="inputPassword" class="input" name="password" type="password" placeholder="Password"><br> -->
+		        <button id="btnAddUser" class="input box-shadow-2 effect-swing">Sign Up</button>
+		    </form>
+		</div>
+
+		{% if message.length %}
+		<p> {{ message }} </p>
+		{% endif %}
+
+		<!--<a href="/login">Log in</a>-->
+	</div>
+</section>
+
+{% endblock %}

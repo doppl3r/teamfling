@@ -1,0 +1,21 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<section>
+    <div class="wrapper">
+        <img class="logo box-shadow-1" src="img/logo.svg"/>
+    </div>
+</section>
+
+{% if user %}
+<h1> Welcome {{user.local.username}} </h1>
+
+{% else %}
+<script>
+  $('.logo').delay(1000).fadeOut( function(){
+    window.location.replace('/register');
+  });
+</script>
+{% endif %}
+
+{% endblock %}

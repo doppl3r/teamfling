@@ -1,0 +1,13 @@
+{% extends "views/layout.html" %}
+
+{% block content %}
+<h1> EXPLORE EVENT </h1>
+
+<div id="eventInput">
+    <form action="/event" method="post" >
+        <input id="eventId" name="eventname" type="text" placeholder="#event" required><br>
+        <button id="btnEvent">Join Event</button>
+    </form>
+</div>
+
+{% endblock %}
