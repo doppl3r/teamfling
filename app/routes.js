@@ -104,6 +104,13 @@ module.exports = function(app, passport) {
         });
     });
 
+    // POST explore, will set a ticker on another person saying you want to meet
+    app.post('/explore', isLoggedIn, function(req, res) {
+        console.log('Showed interested in -- ' + req.body.username);
+        
+        console.log('Nothing actually happens');
+    });
+
     // GET event, will update users event field
     app.get('/event', isLoggedIn, function(req, res) {
         res.render('event.html');
